@@ -1,0 +1,91 @@
+include ../components/post.pug
+
+mixin slider_item(data, type)
+    .owl-slider
+        #carouse.owl-carousel
+            case type
+                when "stories"
+                    .stories__item
+                        .stories__content 
+                            .stories__thumbnail
+                                i(class="fas fa-plus  ") 
+                            h4 Add Story
+                    each item in data 
+                        .stories__item(style=`background-image:url('${item.img}')`)
+                            .stories__content 
+                                img.stories__thumbnail(src=item.imgThumbnail, alt="anh")
+                                h4= item.author
+                when "live"
+                    each item in data 
+                        .live__item
+                            .live__image(style=`background-image:url('${item.img}')`)
+                            .live__content
+                                .live__avatar 
+                                    img(src= item.avatar , alt="anh")
+                                h4.live__name= item.author 
+                                p.live__email= item.email 
+                                span.live__status= "LIVE"
+                when "follow"
+                    each item in data 
+                        .follow__item
+                            .follow__avatar 
+                                img(src= item.avatar , alt="anh")
+                            h4.follow__name= item.author 
+                            p.follow__email= item.userName 
+                            span.follow__status= "FOLLOW"
+                default 
+                    - break
+    
+.main__content 
+    section.stories
+        .slider__container
+            .slider__list 
+                +slider_item(stories, "stories")
+                    //- .stories__item
+                    //-     .stories__content 
+                    //-         i(class="fas fa-plus")
+                    //-         h4= Add Story
+                
+    section.create-post 
+        .create-post__container 
+            .create-post__title 
+                a(href="#" class="post__dot") 
+                    i(class="far fa-edit")
+                h5 Create Post
+            .create-post__message   
+                form(action="#" class="create-post__form")
+                    img.create-post__avatar(src="http://uitheme.net/sociala/images/user-8.png", alt="")
+                    textarea.create-post__input(placeholder="What's on your mind?")
+            .create-post__action 
+                a(href="" )
+                    i(class="fas fa-video text-danger")
+                    span Live Video
+                a(href="")
+                    i(class="fas fa-image text-success")
+                    span Photo/Video
+                a(href="")
+                    i(class="fas fa-camera text-warning")
+                    span Felling/Activity
+    section.post
+        +postItem(1) 
+        +postItem(2) 
+    section.live
+        .slider__container
+            .slider__list 
+                +slider_item(live, "live")
+    section.post 
+        +postItem(3) 
+        +postItem(1) 
+    section.follow 
+        .slider__container
+            .slider__list 
+                +slider_item(follow, "follow")
+    section.post 
+        +postItem(4)
+    section.load 
+
+        
+
+
+                    
+

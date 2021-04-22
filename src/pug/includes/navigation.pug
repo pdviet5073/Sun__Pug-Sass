@@ -1,0 +1,17 @@
+
+mixin navigation__list(type, navigationData)
+    div(class=`navigation__${type}`)
+        h4 New Feeds
+        ul.navigation__list 
+            each socialItem in navigationData
+                li(class=`navigation__item ${type}__item `)
+                    a(class=`${type}__item-icon navigation__item-icon btn__link`,href="")
+                        i(class= socialItem.icon) 
+                        span.navigation__item-text= socialItem.content
+
+input(type="checkbox" id="navigation__menu" class="navigation__menu")
+section.navigation
+    .navigation__content 
+        +navigation__list("newfeed",socialsNewFeed)
+        +navigation__list("morepage",socialsMorePage)
+        +navigation__list("account",socialsAccount)

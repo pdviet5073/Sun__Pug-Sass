@@ -1,0 +1,93 @@
+mixin friend-item(data, type)
+   each item, index in data
+      if(type === "friend-request")
+         .friend__item 
+            .friend__content 
+               .friend__avatar 
+                  img(src=item.avatar, alt="anh")
+               .friend__name 
+                  h4= item.author 
+                  span= item.mutualFriends
+            .friend__button 
+               form(action="#")
+                  button.button.button-round.button-primary Confirm 
+                  button.button.button-round.button-gray Delete
+      if(type === "confirm-friend")
+         .friend__item 
+            .friend__content 
+               .friend__avatar 
+                  img(src=item.avatar, alt="anh")
+               .friend__name 
+                  h4= item.author 
+                  span=    item.mutualFriends
+            .friend__button 
+               if(!index)
+                  a.friend__icon.icon__right(href="#")
+               else 
+                  a.friend__icon.icon__plus(href="#")
+
+mixin suggest-pages-item(img)
+   .suggest-pages__item 
+      img(src=img, alt="anh") 
+      .suggest-pages__button 
+         a(href="#")
+            i(class="far fa-share-square")
+            span Like Page 
+         
+mixin event-item(data)
+    each item in data
+        .event__item
+            .event__date 
+               h5.text-uppercase= item.month
+                  span= item.day
+            .event__right 
+               .event__title 
+                  h5= item.title
+               .event__desc
+                  p= item.content
+
+
+.main__right
+   section.friend-request
+      .friend-request__title 
+         h4 Friend Request
+         a(href="#") See all 
+      .friend-request__content
+         +friend-item(friend, "friend-request")
+   section.confirm-friend
+      .confirm-friend__title 
+         h4 Confirm Friend
+         a(href="#") See all 
+      .friend-request__content
+         +friend-item(friend, "confirm-friend")
+   section.suggest-group
+      .friend-request__title 
+         h4 Suggest Group
+         a(href="#") See all 
+      .suggest-group__content 
+         each item in suggestGroup
+            .suggest-group__thumbnail 
+               img(src=item.thumbnail, alt="anh")
+            .suggest-group__avatar-list
+               each avatarItem in item.author
+                  img(src=avatarItem.img, alt="anh", class="suggest-group__avatar-image")
+               .suggest-group__avatar-more
+                  i(class="fal fa-plus")
+               span Member apply
+   section.suggest-pages
+      .friend-request__title 
+         h4 Suggest Pages
+         a(href="#") See all 
+      .suggest-pages__content 
+         +suggest-pages-item("http://uitheme.net/sociala/images/g-2.jpg")
+         +suggest-pages-item("http://uitheme.net/sociala/images/g-3.jpg ")
+         
+      
+   section.event
+      .confirm-friend__title
+         h4 Event
+         a(href="#") See all 
+      .event__content
+        +event-item(Event)
+
+      

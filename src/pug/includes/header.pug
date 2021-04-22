@@ -1,0 +1,57 @@
+mixin sublink(url,icon,classEl,type_icon='fas', text)
+    li.feather__item
+        a(href=url , class=`btn__link  ${classEl}`)
+            i(class=`${type_icon} fa-${icon} `)= text
+
+header.header 
+    .header__container
+        .container-fluid
+            .row
+                .header__logo.col-lg-1.col-md-2.col-1
+                    a(href="#")
+                        i.fab.fa-facebook
+                .header__search.col-lg-3.col-md-4
+                    form.search__form(action="#")
+                        i.fas.fa-search
+                        input(type="text", placeholder="start typing to search...")
+                .header__feather.col-lg-4.col-md-1
+                    ul.feather__list 
+                        +sublink("#","home")
+                        +sublink("#","bolt")
+                        +sublink("#", "video")
+                        +sublink("#", "user")
+                        +sublink("#","shopping-bag")
+                .header__widget.col-lg-4.col-md-6.col-11
+                    ul.widget__list 
+                        +sublink("#", "bell", "widget__item", "far")
+                        +sublink("#", "comment", "widget__item", "far")
+                        +sublink("#", "cog", "widget__item icon-setting")
+                        li.widget__item 
+                            a(href="#")
+                                img(src="http://uitheme.net/sociala/images/profile-4.png", alt="#") 
+                .header__menu.header__widget.col-11
+                                ul.widget__list 
+                                    +sublink("#", "comment","", "far")
+                                    +sublink("#", "video")
+                                    +sublink("#", "search")
+                                    label(for="navigation__menu")
+                                        i(class="fas fa-bars navigation__menu-icon")
+    
+    .header__feature
+        .container
+            ul.feature__list 
+                +sublink("#","home", "text-light")
+                +sublink("#","bolt", "text-light")
+                +sublink("#", "video", "text-light")
+                +sublink("#","bell", "text-light", "far")
+                li.widget__item 
+                    a(href="#")
+                        img(src="http://uitheme.net/sociala/images/profile-4.png", alt="#") 
+
+
+
+
+                    
+
+
+

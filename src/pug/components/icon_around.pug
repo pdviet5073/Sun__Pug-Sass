@@ -1,0 +1,5 @@
+mixin icon-around(icon, width,class, text)
+ a(class=`icon-around ${class}`,href="")
+                        i(class= icon) 
+                        if(text)
+                            span(class= `${class}-text icon-around-text)= text

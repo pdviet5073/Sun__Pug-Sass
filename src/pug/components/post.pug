@@ -1,0 +1,59 @@
+include ../includes/data.pug
+
+mixin postItem(idPost)
+    - const item = posts.filter(item => item.id === idPost)
+    - const {id, author,avatar,create_At,desc,like,comment,image} = item[0]
+    - const lengthImg = image.length
+        .post__item 
+            .post__top
+                .post__top-left
+                    .post__avatar 
+                        img(src=avatar, alt="avatar")
+                    .post__name 
+                        h4.post__author= author
+                        span= create_At
+                a.post__dot(href="#")
+                    i.fas.fa-ellipsis-h 
+            .post__content
+                p= desc 
+                    a.post__see-more(href="")  See more
+            if( lengthImg  > 0)
+                .post__img
+                    if( lengthImg == 1)
+                        .img-1
+                            each imgItem,index in image
+                                div.post__img__item(style=`background-image:url('${imgItem.src}')`)
+                    if( lengthImg == 3)
+                        .img-less-5
+                            each imgItem,index in image
+                                if(index < 3)
+                                    div.post__img__item(style=`background-image:url('${imgItem.src}')`)
+                                else 
+                                    div.post__img__item.post__img-hidden(style=`background-image:url('${imgItem.src}')`)
+                    if( lengthImg == 5)
+                        .img-bigger-5
+                            each imgItem,index in image
+                                if(index < 5)
+                                    div.post__img__item(style=`background-image:url('${imgItem.src}')`)
+                                else 
+                                    div.post__img__item.post__img-hidden(style=`background-image:url('${imgItem.src}')`)
+            .post__action 
+                .action__left 
+                    i(class="far fa-thumbs-up post__like")
+                    i(class="far fa-heart post__heart")
+                    span.action__like= `${like} Like`
+
+                    a.post__comment
+                        i(class="far fa-comment")
+                        span= `${like} Comment`
+
+
+                .action__right
+                    i(class="fas fa-share-alt")
+                    span Share
+
+
+
+
+
+    

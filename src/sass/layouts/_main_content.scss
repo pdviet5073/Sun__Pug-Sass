@@ -1,0 +1,268 @@
+.main__container {
+    background-color: var(--bgc);
+    min-height: 100vh;
+    padding: 9rem 0 10rem 28rem;
+}
+
+// owl carousel
+.owl-stage {
+    min-width: 120rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.owl-item {
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+}
+// --------------------------------------- stories--------------------------------
+.stories {
+    margin-top: 3.5rem;
+
+    .owl-item {
+        width: 12.5rem !important;
+        &:nth-child(1) {
+            background-color: var(--black);
+            opacity: 0.8;
+        }
+    }
+
+    &__item {
+        position: relative;
+        height: 20rem;
+        &:nth-child(1) {
+            background-color: var(--black);
+
+            .stories__thumbnail {
+                background-color: var(--white);
+                line-height: 5rem;
+                color: var(--primary);
+                font-size: 1.6rem;
+            }
+
+            i {
+            }
+        }
+    }
+    &__content {
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h4 {
+            color: var(--white);
+            font-size: 1.3rem;
+        }
+    }
+    &__thumbnail {
+        width: 5rem !important;
+        height: 5rem;
+        margin-bottom: 0.6rem;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+}
+
+// --------------------------------------- create-post --------------------------------
+.create-post {
+    margin: 2rem 0;
+    padding: 2.4rem;
+    background-color: var(--white);
+    border-radius: 1.2rem;
+    -webkit-border-radius: 1.2rem;
+    -moz-border-radius: 1.2rem;
+    -ms-border-radius: 1.2rem;
+    -o-border-radius: 1.2rem;
+
+    &__title {
+        @include flex-align-center;
+        color: var(--color-text-blurred);
+
+        .post__dot {
+            @include centerWidthHeight(4rem);
+            color: var(--primary) !important;
+            margin-right: 1rem;
+        }
+    }
+    &__message {
+        position: relative;
+        margin: 1.5rem 0;
+        padding: 1rem;
+        border: 2px var(--secondary-blurred) solid;
+        border-radius: 1.2rem;
+        -webkit-border-radius: 1.2rem;
+        -moz-border-radius: 1.2rem;
+        -ms-border-radius: 1.2rem;
+        -o-border-radius: 1.2rem;
+    }
+    &__form {
+    }
+    &__avatar {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        @include width-height(3rem);
+    }
+    &__input {
+        padding-left: 4rem;
+        width: 100%;
+        height: 7rem !important;
+
+        border: none;
+        outline: none !important;
+    }
+    &__action {
+        @include flex-align-center;
+
+        a {
+            margin-right: 2.4rem;
+            font-weight: 500;
+            @include flex-align-center;
+        }
+        i {
+            font-size: 2rem;
+            margin-right: 0.8rem;
+        }
+        span {
+            color: var(--dark);
+            opacity: 0.8;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// ------------------------------------------------- live ---------------------------------
+.live {
+    .owl-item {
+        width: 19rem !important;
+    }
+    &__item {
+        position: relative;
+        height: 25rem;
+        background-color: var(--white);
+    }
+    &__image {
+        @include width-height(100%, 50%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &__content {
+        transform: translateY(-35%);
+        -webkit-transform: translateY(-35%);
+        -moz-transform: translateY(-35%);
+        -ms-transform: translateY(-35%);
+        -o-transform: translateY(-35%);
+        text-align: center;
+    }
+    &__avatar {
+        width: fit-content;
+        margin: auto;
+        border: 4px var(--white) solid;
+        background-color: var(--white);
+        overflow: hidden;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+        img {
+            width: 7rem !important;
+            height: 7rem;
+        }
+    }
+    &__name {
+        font-weight: 600;
+    }
+    &__email {
+        font-size: 1.1rem;
+        font-weight: 600;
+        opacity: 0.5;
+    }
+    &__status {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.5rem 1.7rem;
+        color: var(--white);
+        background-color: var(--red);
+        border-radius: 4px;
+        font-size: 1.3rem;
+        font-weight: 500;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+}
+// ------------------------------------------------- follow ---------------------------------
+.follow {
+    .owl-item {
+        width: 16rem !important;
+    }
+    &__item {
+        text-align: center;
+        height: 22rem;
+        background-color: var(--white);
+        padding: 2rem;
+    }
+    &__avatar {
+        width: fit-content;
+        margin: 0 auto 1.5rem;
+
+        img {
+            width: 7rem !important;
+            height: 7rem;
+        }
+    }
+    &__name {
+        font-weight: 500;
+    }
+    &__email {
+        font-size: 1.2rem;
+        font-weight: 500;
+        opacity: 0.7;
+    }
+    &__status {
+        padding: 0.7rem 2rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        background-color: var(--success);
+        color: var(--white);
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+    }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .main__container {
+        padding: 9rem 0 10rem 0;
+    }
+
+    /* Small devices (landscape phones, less than 768px) */
+    @media (max-width: 767.98px) {
+    }
+    /* Extra small devices (portrait phones, less than 576px) */
+    @media (max-width: 575.98px) {
+        .stories {
+            margin-top: 0.5rem;
+        }
+    }
+}
