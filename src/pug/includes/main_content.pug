@@ -41,10 +41,6 @@ mixin slider_item(data, type)
         .slider__container
             .slider__list 
                 +slider_item(stories, "stories")
-                    //- .stories__item
-                    //-     .stories__content 
-                    //-         i(class="fas fa-plus")
-                    //-         h4= Add Story
                 
     section.create-post 
         .create-post__container 
@@ -83,6 +79,9 @@ mixin slider_item(data, type)
     section.post 
         +postItem(4)
     section.load 
+        .load-1 
+        .load-2
+        .load-3
 
         
 

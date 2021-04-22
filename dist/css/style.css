@@ -142,10 +142,11 @@ body {
   flex-wrap: nowrap;
   width: 100%; }
   .header .search__form input {
+    padding-left: 1rem;
+    flex-grow: 1;
+    overflow: hidden;
     border: none;
     outline: none !important;
-    flex-grow: 1;
-    padding-left: 1rem;
     background-color: var(--secondary-blurred); }
 
 .header .feather__list,
@@ -169,6 +170,10 @@ body {
   height: 5rem;
   border-radius: 50%;
   color: var(--primary); }
+
+.header .icon-bell i:hover {
+  animation: rotate10deg 0.8s infinite linear;
+  -webkit-animation: rotate10deg 0.8s infinite linear; }
 
 .header .icon-setting i {
   animation: rotate360 2s infinite linear;
@@ -228,6 +233,32 @@ body {
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg); } }
+
+@keyframes rotate10deg {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0); }
+  25% {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg); }
+  75% {
+    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg); }
+  100% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0); } }
 
 /* Large devices (desktops, less than 1200px) */
 /* Medium devices (tablets, less than 992px) */
@@ -387,6 +418,8 @@ body {
     .stories .owl-item:nth-child(1) {
       background-color: var(--black);
       opacity: 0.8; }
+  .stories .owl-dots {
+    display: none; }
   .stories__item {
     position: relative;
     height: 20rem; }
@@ -516,6 +549,7 @@ body {
 
 .live__avatar {
   width: fit-content;
+  width: -moz-fit-content;
   margin: auto;
   border: 4px var(--white) solid;
   background-color: var(--white);
@@ -562,6 +596,7 @@ body {
 
 .follow__avatar {
   width: fit-content;
+  width: -moz-fit-content;
   margin: 0 auto 1.5rem; }
   .follow__avatar img {
     width: 7rem !important;
@@ -586,6 +621,63 @@ body {
   -moz-border-radius: 2rem;
   -ms-border-radius: 2rem;
   -o-border-radius: 2rem; }
+
+.load {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 2rem 0;
+  background-color: var(--white); }
+  .load-1, .load-2, .load-3 {
+    width: 2px;
+    height: 2rem;
+    background-color: var(--secondary);
+    margin: 0.5rem; }
+  .load-1 {
+    animation: up-and-down 2s infinite linear;
+    -webkit-animation: up-and-down 2s infinite linear; }
+  .load-2 {
+    animation: up-and-down 2s infinite linear 0.45s;
+    -webkit-animation: up-and-down 2s infinite linear 0.45s; }
+  .load-3 {
+    animation: up-and-down 2s infinite linear 0.75s;
+    -webkit-animation: up-and-down 2s infinite linear 0.75s; }
+
+@keyframes up-and-down {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0); }
+  25% {
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%); }
+  75% {
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%); }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0); } }
 
 /* Large devices (desktops, less than 1200px) */
 /* Medium devices (tablets, less than 992px) */
@@ -967,7 +1059,7 @@ body {
     overflow: hidden; }
     .post__img .img-less-5 .post__img__item:nth-child(1) {
       width: 100%;
-      height: 0;
+      min-height: 13rem;
       padding-top: 100%; }
   .post__img .img-bigger-5 {
     display: grid;
@@ -978,7 +1070,7 @@ body {
       grid-row: 1/2;
       grid-column: 1/4;
       width: 100%;
-      height: 0;
+      min-height: 16rem;
       padding-top: 62.5%; }
     .post__img .img-bigger-5 .post__img__item:nth-child(2) {
       grid-row: 1/2;
